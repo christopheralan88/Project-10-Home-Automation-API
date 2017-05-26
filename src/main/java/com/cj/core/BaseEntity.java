@@ -14,6 +14,6 @@ public abstract class BaseEntity {
     private Long id;
 
     protected BaseEntity() {
-        this.id = null;
+        id = null;
     }
 }
