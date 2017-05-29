@@ -8,6 +8,7 @@ import com.cj.user.User;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -21,14 +22,14 @@ public class Room extends BaseEntity{
 
     protected Room() {
         super();
+        devices = new ArrayList<>();
+        administrators = new ArrayList<>();
     }
 
     public Room(String name, int area, List<Device> devices, List<User> admins) {
         this();
         this.name = name;
         this.area = area;
-        this.devices = devices;
-        this.administrators = admins;
     }
 
     public String getName() {
@@ -51,15 +52,15 @@ public class Room extends BaseEntity{
         return devices;
     }
 
-    public void setDevices(List<Device> devices) {
-        this.devices = devices;
+    public void addDevice(Device device) {
+        this.devices.add(device);
     }
 
     public List<User> getAdministrators() {
         return administrators;
     }
 
-    public void setAdministrators(List<User> administrators) {
-        this.administrators = administrators;
+    public void addAdministrator(User user) {
+        this.administrators.add(user);
     }
 }

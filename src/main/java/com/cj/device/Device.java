@@ -9,6 +9,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -21,13 +22,13 @@ public class Device extends BaseEntity{
 
     protected Device() {
         super();
+        controls = new ArrayList<>();
     }
 
-    public Device(String name, Room room, List<Control> controls) {
+    public Device(String name, Room room) {
         this();
         this.name = name;
         this.room = room;
-        this.controls = controls;
     }
 
     public String getName() {
@@ -42,7 +43,7 @@ public class Device extends BaseEntity{
         return room;
     }
 
-    public void setRoom(Room room) {
+    public void addRoom(Room room) {
         this.room = room;
     }
 
@@ -50,7 +51,7 @@ public class Device extends BaseEntity{
         return controls;
     }
 
-    public void setControls(List<Control> controls) {
-        this.controls = controls;
+    public void addControls(Control control) {
+        this.controls.add(control);
     }
 }
