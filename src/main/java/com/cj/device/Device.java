@@ -17,7 +17,7 @@ public class Device extends BaseEntity{
     private String name;
     @ManyToOne
     private Room room;
-    @OneToMany(mappedBy = "id", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "device", cascade = CascadeType.ALL)
     private List<Control> controls;
 
     protected Device() {

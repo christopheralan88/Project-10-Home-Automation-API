@@ -7,6 +7,7 @@ import com.cj.user.User;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,9 +16,9 @@ import java.util.List;
 public class Room extends BaseEntity{
     private String name;
     private int area;
-    @OneToMany(mappedBy = "id", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "room", cascade = CascadeType.ALL)
     private List<Device> devices;
-    @OneToMany(mappedBy = "id", cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.MERGE)
     private List<User> administrators;
 
     protected Room() {
