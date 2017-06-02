@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0068ba3b-5e82-4a2b-9bc9-6e599379e67e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_data_spring_data_rest_hal_browser_2_4_4_RELEASE.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/cj/control/ControlRepository.class" afterPath="$PROJECT_DIR$/build/classes/main/com/cj/control/ControlRepository.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/cj/core/DatabaseLoader.class" afterPath="$PROJECT_DIR$/build/classes/main/com/cj/core/DatabaseLoader.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/cj/device/Device.class" afterPath="$PROJECT_DIR$/build/classes/main/com/cj/device/Device.class" />
@@ -10,10 +9,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/cj/room/Room.class" afterPath="$PROJECT_DIR$/build/classes/main/com/cj/room/Room.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/cj/room/RoomRepository.class" afterPath="$PROJECT_DIR$/build/classes/main/com/cj/room/RoomRepository.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/cj/user/UserRepository.class" afterPath="$PROJECT_DIR$/build/classes/main/com/cj/user/UserRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/home-automation_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/home-automation_main.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/home-automation_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/home-automation_test.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -889,7 +885,14 @@
       <option name="project" value="LOCAL" />
       <updated>1496289899927</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="repository classes now implement PagingAndSortingRepository interface.  Added search by name functionality for Device class.">
+      <created>1496434069785</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1496434069785</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
