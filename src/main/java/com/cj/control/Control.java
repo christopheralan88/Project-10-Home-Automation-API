@@ -6,14 +6,21 @@ import com.cj.device.Device;
 import com.cj.user.User;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Control extends BaseEntity{
+    @NotNull
+    @Size(min = 1)
     private String name;
     @ManyToOne
+    @NotNull
     private Device device;
+    @NotNull
     private int value;
     @OneToOne
+    @NotNull
     private User lastModifiedBy;
 
     protected Control() {
