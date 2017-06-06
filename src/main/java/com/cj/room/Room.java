@@ -9,6 +9,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.ArrayList;
@@ -20,6 +21,8 @@ public class Room extends BaseEntity{
     @Size(min = 1)
     private String name;
     @NotNull
+    //@Size(min = 1, max = 1000, message = "The room's area must be between 1 and 1000 sq feet")
+    @Max(value = 1000, message = "The room's area can't be greater than 1000 sq feet")
     private int area;
     @NotNull
     @OneToMany(mappedBy = "room", cascade = CascadeType.ALL)

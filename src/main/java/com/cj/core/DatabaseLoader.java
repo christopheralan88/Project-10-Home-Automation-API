@@ -38,8 +38,8 @@ public class DatabaseLoader implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
         List<User> userList = Arrays.asList(
-                new User("user1", new String[] {"role1", "role2"}, "abc"),
-                new User("user2", new String[] {"role3", "role4"}, "def")
+                new User("admin", new String[] {"ROLE_USER", "ROLE_ADMIN"}, "abc"),
+                new User("user", new String[] {"ROLE_USER"}, "def")
         );
         users.save(userList);
 
@@ -49,7 +49,7 @@ public class DatabaseLoader implements ApplicationRunner {
 
         IntStream.range(1, 100)
                 .forEach(i -> {
-                    Room room = new Room("room" + i, 0, null, null);
+                    Room room = new Room("room" + i, 10, null, null);
                     Device device = new Device("device" + i, room);
                     Control control = new Control("control + i", device, 0, userList.get(0));
 
