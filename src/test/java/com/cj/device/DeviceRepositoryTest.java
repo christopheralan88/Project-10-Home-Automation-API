@@ -26,7 +26,6 @@ public class DeviceRepositoryTest {
     @Test
     public void findAllReturnsDevices() throws Exception {
         //Act
-        //Iterable<Device> d = devices.findAll();
         Page<Device> allDevices = devices.findAll(new PageRequest(1, 20));
 
         //Assert
