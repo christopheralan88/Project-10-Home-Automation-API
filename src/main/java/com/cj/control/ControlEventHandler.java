@@ -25,4 +25,11 @@ public class ControlEventHandler {
         User user = users.findByName(username);
         control.setLastModifiedBy(user);
     }
+
+    @HandleBeforeCreate
+    public void addUserToControlLastModifiedFieldWhenCreating(Control control) {
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        User user = users.findByName(username);
+        control.setLastModifiedBy(user);
+    }
 }

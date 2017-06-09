@@ -20,7 +20,7 @@ public class Control extends BaseEntity{
     @NotNull
     private int value;
     @OneToOne
-    @NotNull
+    //@NotNull
     private User lastModifiedBy;
 
     protected Control() {
