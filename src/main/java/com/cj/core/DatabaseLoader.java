@@ -26,7 +26,7 @@ public class DatabaseLoader implements ApplicationRunner {
     private final DeviceRepository devices;
     private final ControlRepository controls;
 
-    //injects whatever class we have implementing the UserRepository interface
+    //injects whatever class we have implementing the UserRepo, RoomRepo, DeviceRepo, and ControlRepo interfaces
     @Autowired
     public DatabaseLoader(UserRepository users, RoomRepository rooms, DeviceRepository devices, ControlRepository controls) {
         this.users = users;
@@ -39,7 +39,8 @@ public class DatabaseLoader implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
         List<User> userList = Arrays.asList(
                 new User("admin", new String[] {"ROLE_USER", "ROLE_ADMIN"}, "abc"),
-                new User("user", new String[] {"ROLE_USER"}, "def")
+                new User("user", new String[] {"ROLE_USER"}, "def"),
+                new User("admin2", new String[] {"ROLE_USER", "ROLE_ADMIN"}, "ghi")
         );
         users.save(userList);
 
@@ -51,7 +52,7 @@ public class DatabaseLoader implements ApplicationRunner {
                 .forEach(i -> {
                     Room room = new Room("room" + i, 10, null, null);
                     Device device = new Device("device" + i, room);
-                    Control control = new Control("control + i", device, 0, userList.get(0));
+                    Control control = new Control("control" + i, device, 0, userList.get(0));
 
                     room.addDevice(device);
                     room.addAdministrator(userList.get(0));
